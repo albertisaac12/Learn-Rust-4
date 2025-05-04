@@ -12,3 +12,11 @@ path="src/iterationOverBytes.rs"
 [[bin]]
 name="struct"
 path="src/structsAndImpl.rs"
+
+[[bin]]
+name="aliase"
+path="src/typeAliase.rs"
+
+[[bin]]
+name="directive"
+path="src/compilerDirective.rs"
