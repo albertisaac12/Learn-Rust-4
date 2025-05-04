@@ -56,7 +56,6 @@ fn main() {
 
     let r2 = rectangle::square(5);
 
-    let r3 =5;
 
 }
 

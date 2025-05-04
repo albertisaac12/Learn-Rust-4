@@ -20,3 +20,7 @@ path="src/typeAliase.rs"
 [[bin]]
 name="directive"
 path="src/compilerDirective.rs"
+
+[[bin]]
+name="enum"
+path="src/enums.rs"
