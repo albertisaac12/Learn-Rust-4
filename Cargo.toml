@@ -40,3 +40,7 @@ path="src/GenericIntro.rs"
 [[bin]]
 name="recursion"
 path="src/recursion.rs"
+
+[[bin]]
+name="owner"
+path="src/ownership.rs"
