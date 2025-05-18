@@ -44,3 +44,11 @@ path="src/recursion.rs"
 [[bin]]
 name="owner"
 path="src/ownership.rs"
+
+[[bin]]
+name="arrayOwner"
+path="src/arrayTupleOwnership.rs"
+
+[[bin]]
+name="exe1"
+path="src/exercise1.rs"

@@ -40,12 +40,19 @@ fn main() {
     meal = add_fries(meal);
     println!("{}",meal);
 
+
+
+
 }
 
 
 fn add_fries(mut meal:String)-> String {
     meal.push_str("and Fries");
     meal
+}
+
+fn add_fries_mut(meal:&mut String) {
+    (*meal).push_str("fries Added");
 }
 // What is ownership ?
 
@@ -99,3 +106,26 @@ fn add_fries(mut meal:String)-> String {
 // An operation is a symbol that applies an operation to a value
 
 // To dereference means to access the data at the memory address that the reference points to.
+
+// The function parameters can be both mutable and immutable they also can take a reference, the reference can be either be mutable or immutable
+
+/*
+    Function Parameter Understanding
+    Parameter => cat
+
+    mut cat => the cat can change meaning cat can be assigned a new value
+    cat: & => cat is a reference
+    cat :&mut => reference that can change a cat
+
+    Presidency order of . is grater than * so when you do this
+    *cat.push_str("meow meow"); // this will throw an error because the . will be evaluated first and then we try to dereference whats left off it.
+
+    for the actual arguments being passed in use &.
+*/
+
+// meal: String
+// mut meal: String
+// meal: &String
+// meal: &mut String
+
+// reference types also implement the copy trait
