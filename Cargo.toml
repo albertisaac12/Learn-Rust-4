@@ -52,3 +52,15 @@ path="src/arrayTupleOwnership.rs"
 [[bin]]
 name="exe1"
 path="src/exercise1.rs"
+
+[[bin]]
+name="slices"
+path="src/slices.rs"
+
+[[bin]]
+name="exe2"
+path="src/exercise2.rs"
+
+[[bin]]
+name="structs"
+path="src/structs.rs"
