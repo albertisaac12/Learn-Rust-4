@@ -53,10 +53,7 @@ fn main() {
     };
     println!("{}", r1.area());
 
-
     let r2 = rectangle::square(5);
-
-
 }
 
 fn buildUser(email: String, username: String) -> User {

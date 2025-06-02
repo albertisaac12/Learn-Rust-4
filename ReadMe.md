@@ -71,3 +71,5 @@ When a `String` is created on heap correspondingly on the stack there will be an
 rust has a feature called auto dereference
 
 rust also implements the `Display` trait for references hence when you print a reference it will print the value and not the address.
+
+An attribute is a directive to the compiler It is metadata on the line above a construct that coustomizes how the compiler parses the code.

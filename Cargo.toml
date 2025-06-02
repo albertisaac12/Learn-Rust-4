@@ -21,9 +21,6 @@ path="src/typeAliase.rs"
 name="directive"
 path="src/compilerDirective.rs"
 
-[[bin]]
-name="enum"
-path="src/enums.rs"
 
 [[bin]]
 name="method"
@@ -64,3 +61,11 @@ path="src/exercise2.rs"
 [[bin]]
 name="structs"
 path="src/structs.rs"
+
+[[bin]]
+name="exe3"
+path="src/exercise3.rs"
+
+[[bin]]
+name="enums"
+path="src/enums.rs"

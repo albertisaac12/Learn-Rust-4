@@ -7,10 +7,9 @@ fn main() {
     println!("{mc}");
 
     let bc = mc.clone(); // the String type implements the Clone trait
-    println!("{}",mc);
+    println!("{}", mc);
     drop(mc); // drop can be called manually too
     // println!("{mc}");
-
 
     let mut ff = String::new();
     ff.push_str("hie");
@@ -21,37 +20,31 @@ fn main() {
     let my_stack_value = 2;
     let my_integer_reference = &my_stack_value;
 
-    let my_heap_value =String::from("maomao");
+    let my_heap_value = String::from("maomao");
     let my_heap_reference = &my_heap_value;
     // reference is an example of a pointer
     // drop(my_heap_value);
-    println!("{:#?}",*my_heap_reference);
-    println!("{:#?}",my_heap_reference);
-
+    println!("{:#?}", *my_heap_reference);
+    println!("{:#?}", my_heap_reference);
 
     let mut ice_cream = "cookies and cream";
     let dessert = ice_cream;
     ice_cream = "mmmmm";
-    println!("{}",ice_cream);
+    println!("{}", ice_cream);
 
-    println!("{}",dessert);
+    println!("{}", dessert);
 
     let mut meal = String::from("burger");
     meal = add_fries(meal);
-    println!("{}",meal);
-
-
-
-
+    println!("{}", meal);
 }
 
-
-fn add_fries(mut meal:String)-> String {
+fn add_fries(mut meal: String) -> String {
     meal.push_str("and Fries");
     meal
 }
 
-fn add_fries_mut(meal:&mut String) {
+fn add_fries_mut(meal: &mut String) {
     (*meal).push_str("fries Added");
 }
 // What is ownership ?
@@ -71,7 +64,7 @@ fn add_fries_mut(meal:&mut String) {
     => fast.
     => fixed predictable constant size, the size must be known at the compile time.
 
-    => LIFO 
+    => LIFO
     => push
     =>pop
 
@@ -81,19 +74,18 @@ fn add_fries_mut(meal:&mut String) {
 /*
     => slow.
     => dynamic data, can change over time during the entire period of the program.
-    
+
     => A program called memory allocator finds an empty spot large enough to store the data
     => The heap is a large are of storage space
     => heap is for data whose size is not known at compile time
 
     => The memory allocator returns a reference of the empty location (memory address).
 
-    Note: since the size and value of reference is known it can be stored on a stack. 
+    Note: since the size and value of reference is known it can be stored on a stack.
 */
 
 // pushing to the stack is faster than the heap , reading data is also fast in stack
 // The owner knows how to cleanup the data => it is cleaned up when the owner goes out of the scope.
-
 
 // Any type implementing the copy trait will be cloned on the stack
 

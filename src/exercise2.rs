@@ -1,9 +1,15 @@
 fn main() {
-    let mut cereals = [String::from("Cookie Crisp"),String::from("Cinnamon Toast Crunch"),String::from("Frosted Flakes"),String::from("Cocoa Puffs"),String::from("Captain Crunch")]; 
-    
+    let mut cereals = [
+        String::from("Cookie Crisp"),
+        String::from("Cinnamon Toast Crunch"),
+        String::from("Frosted Flakes"),
+        String::from("Cocoa Puffs"),
+        String::from("Captain Crunch"),
+    ];
+
     let last_three = &mut cereals[3..];
     print_str(last_three);
-    last_three[1] = String::from("Captain Crunch"); 
+    last_three[1] = String::from("Captain Crunch");
 
     let first_two = &cereals[0..2]; // immutable reference to the cereals variable
     print_str(first_two);
@@ -11,23 +17,18 @@ fn main() {
     let mid_three = &cereals[1..4];
     print_str(mid_three);
 
-
     let cookie_crisp = &first_two[0];
     let cookie = &cookie_crisp[0..5];
     println!("{cookie}");
-    
+
     // let cocoa_puffs = &last_three[1];
     // let puffs = &cocoa_puffs[6..];
     // println!("{puffs}");
-  
-
 }
 
-
-fn print_str(val:&[String]) {
-   println!("{val:?}");
+fn print_str(val: &[String]) {
+    println!("{val:?}");
 }
-
 
 /*
 
