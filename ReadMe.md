@@ -97,3 +97,21 @@ The length of the string slice refers to the count of its bytes and not of its c
 
 ## The Rust Prelude
 The rust prelude is a collection of named constructs that are available automatically in every program.
+
+
+## Methods to remember
+```rust
+    // conditionals
+    while let
+    if let // Use when you wanna Match on single pattern, variable inside let is only valid in let scope.
+    let else // variable inside the let will be available after let scope.
+
+    unwrap // no default or error value will Panic
+    unwrap.or(default value)
+    expect(error message)
+
+    is_err()
+    is_ok()
+
+    is_empty()
+```

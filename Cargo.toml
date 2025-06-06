@@ -93,3 +93,15 @@ path="src/option.rs"
 [[bin]]
 name="optionfs"
 path="src/optionFromScratch.rs"
+
+[[bin]]
+name="result"
+path="src/result.rs"
+
+[[bin]]
+name="exe6"
+path="src/exercise6.rs"
+
+[[bin]]
+name="vec"
+path="src/vec.rs"
