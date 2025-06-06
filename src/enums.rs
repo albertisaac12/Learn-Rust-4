@@ -38,6 +38,7 @@ enum OperatingSystem {
 }
 fn main() {
     let mc = CardSuit::Clubs;
+    
 
     let mc = mcbc {
         tp: CardSuit::Clubs,

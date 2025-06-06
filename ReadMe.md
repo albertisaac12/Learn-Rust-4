@@ -73,3 +73,24 @@ rust has a feature called auto dereference
 rust also implements the `Display` trait for references hence when you print a reference it will print the value and not the address.
 
 An attribute is a directive to the compiler It is metadata on the line above a construct that coustomizes how the compiler parses the code.
+
+A mutable reference does not implement a copy trait
+An Immutable reference implements a copy trait
+
+`&String can be converted to &str while the converse is not true`
+
+Composite types like arrays and tuples have ownership over their elements
+
+if an value implements the Copy trait, Rust will create a copy of it when we index into the type.
+
+If an value does not implement the Copy trait, ownership will move form the composite type to the new owner.
+
+the slice index does not represent the position of the value in a string it rather gives the byte Value it just happens so that the byte value is the same as position value in English.
+
+The length of the string slice refers to the count of its bytes and not of its characters
+
+```rust
+    impl<K> time<K> {
+        // “I am implementing methods for time<K>, where K is a generic type, and I call that type K.”
+    }
+```

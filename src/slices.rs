@@ -7,6 +7,14 @@ fn main() {
 
     myslice[0] = 6;
     println!("{my_array:?}");
+
+
+    meoww(&my_array);
+}
+
+
+fn meoww(i:&[i32])  {
+    println!("{i:?}");
 }
 
 // the range is rather that off the bytes and not that off the index , in english characters 1 byte is one character
@@ -14,3 +22,12 @@ fn main() {
 // &String can be converted to &str while the converse is not true
 
 // rust does not permit mutable slice of Strings
+
+/*
+    let abc:&str = "hiiii";
+    let bc:&str = &abc[2..];
+    here the bc variable is not creating a reference to the reference abc but it uses abc as a base to create its own independent reference 
+    meaning it uses abc once to locate the chunk of the memory and later create its own reference
+*/
+
+// the length of the string slice refers to the count of its bytes and not of its characters
