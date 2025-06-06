@@ -94,3 +94,6 @@ The length of the string slice refers to the count of its bytes and not of its c
         // “I am implementing methods for time<K>, where K is a generic type, and I call that type K.”
     }
 ```
+
+## The Rust Prelude
+The rust prelude is a collection of named constructs that are available automatically in every program.

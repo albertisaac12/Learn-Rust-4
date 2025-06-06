@@ -85,3 +85,11 @@ path="src/generic.rs"
 [[bin]]
 name="exe5"
 path="src/exercise5.rs"
+
+[[bin]]
+name="option"
+path="src/option.rs"
+
+[[bin]]
+name="optionfs"
+path="src/optionFromScratch.rs"
