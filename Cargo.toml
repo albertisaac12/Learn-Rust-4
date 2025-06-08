@@ -105,3 +105,7 @@ path="src/exercise6.rs"
 [[bin]]
 name="vec"
 path="src/vec.rs"
+
+[[bin]]
+name="exe7"
+path="src/exercise7.rs"
