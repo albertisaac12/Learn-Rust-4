@@ -109,3 +109,7 @@ path="src/vec.rs"
 [[bin]]
 name="exe7"
 path="src/exercise7.rs"
+
+[[bin]]
+name="sop"
+path="src/stringOp.rs"
