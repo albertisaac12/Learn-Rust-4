@@ -1,4 +1,4 @@
-use std::io::{read_to_string};
+use std::io;
 
 fn main() {
     
@@ -29,6 +29,22 @@ fn main() {
 
     let music = "Rock, Metal, Country, Rap";
 
+    println!("{}",music.replace("a", "@"));
+    // println!("{music}");
+
     let genres= music.split(", ").collect::<Vec<&str>>();
+
+    let mut line = String::new();
+    // let mc =io::stdin().read_line(&mut line).expect("Error Reading from Console"); // Ok() here has the number of bytes
+    // println!("{mc}");
+    match io::stdin().read_line(&mut line) {
+        Ok(a) => {
+            println!("{a}");
+        }
+        _=> {
+            println!("Error Reading");
+        }
+    } // Ok() here has the number of bytes
+    println!("{line}");
 
 }

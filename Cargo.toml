@@ -113,3 +113,7 @@ path="src/exercise7.rs"
 [[bin]]
 name="sop"
 path="src/stringOp.rs"
+
+[[bin]]
+name="exe8"
+path="src/exercise8.rs"
