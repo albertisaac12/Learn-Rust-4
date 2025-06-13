@@ -117,3 +117,7 @@ path="src/stringOp.rs"
 [[bin]]
 name="exe8"
 path="src/exercise8.rs"
+
+[[bin]]
+name="hm"
+path="src/hashMaap.rs"
