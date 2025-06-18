@@ -133,3 +133,7 @@ path="src/errorHandling.rs"
 [[bin]]
 name="exe10"
 path="src/exercise10.rs"
+
+[[bin]]
+name="ttr"
+path="src/ttraits.rs"
