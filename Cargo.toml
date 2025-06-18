@@ -125,3 +125,11 @@ path="src/hashMaap.rs"
 [[bin]]
 name="exe9"
 path="src/exercise9.rs"
+
+[[bin]]
+name="errs"
+path="src/errorHandling.rs"
+
+[[bin]]
+name="exe10"
+path="src/exercise10.rs"
