@@ -62,8 +62,29 @@ impl Accommodation for AirBnB {
     }
 }
 
-fn book_for_one_night (entity: &impl Accommodation)  {
+fn book_for_one_night (entity: &mut impl Accommodation)  {
     println!("{}", entity.get_description());
+    entity.book("new Guest", 1);
+}
+
+fn book_for_one_night_trait_bound<T: Accommodation> (entity: &mut T) {
+    println!("{}", entity.get_description());
+    entity.book("nnnn", 4);
+}
+
+fn mix_and_match(first: &mut impl Accommodation, second: &mut impl Accommodation,guest: &str) { // here first and second can be any types as long as they implement the Accommodation trait
+    first.book(guest, 1);
+    second.book(guest, 1);
+}
+
+fn mix_and_match_2<T: Accommodation>(first: &mut T, second: &mut T,guest: &str) { // here both first and second are of both type T
+    first.book(guest, 1);
+    second.book(guest, 1);
+}
+
+fn mix_and_match_2_fix<T: Accommodation,U: Accommodation>(first: &mut T, second: &mut U,guest: &str) { // here both first and second are of both are different types Now
+    first.book(guest, 1);
+    second.book(guest, 1);
 }
 
 fn main() {
@@ -82,7 +103,7 @@ fn main() {
     Hotel::default();
     AirBnB::default();
 
-    book_for_one_night(&h1);
+    book_for_one_night(&mut h1);
 
 }
 
