@@ -1,5 +1,5 @@
 use std::{collections::HashMap};
-
+use std::fmt::{format, Display};
 trait Accommodation {
     fn get_description(&self) -> String;
     
@@ -87,6 +87,24 @@ fn mix_and_match_2_fix<T: Accommodation,U: Accommodation>(first: &mut T, second:
     second.book(guest, 1);
 }
 
+fn nxx<T,U> (first: &mut T,second: &mut U) where T: Accommodation, U: Accommodation {
+
+}
+
+fn traits_as_return_types()  -> impl Accommodation { // Any type that implements Accommodation
+   Hotel::new("mwo mwo")
+}
+
+// fn in_traits_as_return_types_we_cannot_return_differnt_types() -> impl Accommodation { // this function will give types mismatched error
+
+//     if true {
+//        return Hotel::new("aaaa");
+//     }else {
+//         return AirBnB::new("asdasd");
+//     }
+
+// }
+
 fn main() {
 
     let mut h1 = Hotel::new("wowzzzaaaa");
@@ -105,6 +123,28 @@ fn main() {
 
     book_for_one_night(&mut h1);
 
+
+    let stays: Vec<&dyn Accommodation> = vec![&h1,&a1];
+
 }
 
 // if a default implementation is not overridden it will not be able to call by instance of that type rather use the type and :: . Example ->  Type::function();
+
+// first : &mut (impl trait1 + trait2)
+
+struct mc<T> /*mc<T: Accommodation> */ { // Any type T that implements Accommodation
+    name : T,
+    reservations : HashMap<String,u32>
+}
+
+impl<T: Display> mc<T> {
+    fn summarize(&self) -> String {
+        format!("{} {}",self.name,self.name)
+    }
+}
+
+impl<T>  mc<T> {
+  fn new(name:T) -> Self {
+    Self { name, reservations: HashMap::new() }
+  }
+}
