@@ -91,7 +91,7 @@ fn nxx<T,U> (first: &mut T,second: &mut U) where T: Accommodation, U: Accommodat
 
 }
 
-fn traits_as_return_types()  -> impl Accommodation { // Any type that implements Accommodation
+fn traits_as_return_types()  -> impl Accommodation { // Any type that implements Accommodation can be returned
    Hotel::new("mwo mwo")
 }
 
@@ -124,7 +124,7 @@ fn main() {
     book_for_one_night(&mut h1);
 
 
-    let stays: Vec<&dyn Accommodation> = vec![&h1,&a1];
+    // let stays: Vec<&dyn Accommodation> = vec![&h1,&a1];
 
 }
 

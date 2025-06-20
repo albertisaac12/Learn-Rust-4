@@ -137,3 +137,15 @@ path="src/exercise10.rs"
 [[bin]]
 name="ttr"
 path="src/ttraits.rs"
+
+[[bin]]
+name="ttr2"
+path="src/traits2.rs"
+
+[[bin]]
+name="tobj"
+path="src/traitObjects.rs"
+
+[[bin]]
+name="tc"
+path="src/traits3Constants.rs"
