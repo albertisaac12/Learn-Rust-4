@@ -87,6 +87,11 @@ fn mix_and_match_with_generics_fix<T: Accommodation, U: Accommodation> (first: &
     first.book(guest, 1);
     second.book(guest, 1);
 }
+
+fn mix_and_match_with_generics_fix_with_multiple_trait_bounds<T: Accommodation + Description, U: Accommodation> (first: &mut T, second: &mut U, guest: &str) { // here both the types T are the same meaning they will be only one type
+    first.book(guest, 1);
+    second.book(guest, 1);
+}
 fn main() {
 
     let mut booking1 = Hotel::new("Jolly Stayz");
