@@ -149,3 +149,8 @@ path="src/traitObjects.rs"
 [[bin]]
 name="tc"
 path="src/traits3Constants.rs"
+
+[[bin]]
+name="tc2"
+path="src/traitsContd.rs"
+
