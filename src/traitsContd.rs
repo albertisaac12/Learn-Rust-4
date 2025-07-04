@@ -149,5 +149,18 @@ fn main() {
 
     println!("{}",h1.summarize());
     println!("{}",h2.summarize());
-    // println!("{}",h3.summarize()); // This will throw an error because a vector doesn't impliment Display 
+    // println!("{}",h3.summarize()); // This will throw an error because a vector doesn't implement Display 
+
+
+    // dynamic dispatch is for runtime 
+    // dynamic dispatch will figure out the type in runtime
+    // dynamic dispatch will only work on references
+    // A trait object is some instance of some type that implements a particular trait
+    let stays: Vec<&dyn Description> = vec![&h1,&airBnB2];
+
+    println!("{}", stays[0].get_description());
+    println!("{}", stays[1].get_description());
+
+
+
 }
