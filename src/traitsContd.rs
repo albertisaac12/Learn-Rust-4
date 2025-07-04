@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fmt::{format, Debug}};
+use std::{collections::HashMap, fmt::{Display}};
 
 trait Accommodation {
   
@@ -12,22 +12,26 @@ trait Description {
 }
 
 #[derive(Debug)]
-struct Hotel {
-    name: String,
+struct Hotel<T> {
+    name: T,
     reservation: HashMap<String,u32>
 }
 
-impl Hotel {
-    fn new(name: &str) -> Self {
-        Self { name: name.to_string(), reservation: HashMap::new()}
+impl<T> Hotel<T> {
+    fn new(name: T) -> Self {
+        Self { name, reservation: HashMap::new()}
     }
+}
 
+
+impl<T: Display> Hotel<T> {
+    
     fn summarize(&self) -> String {
         format!("{} {}", self.name, self.get_description())
     }
 }
 
-impl Accommodation for Hotel {
+impl<T> Accommodation for Hotel<T> {
     // fn get_description(&self) -> String {
     //     self.name.clone()
     // }
@@ -38,7 +42,7 @@ impl Accommodation for Hotel {
     }
 }
 
-impl Description for Hotel {
+impl<T> Description for Hotel<T> {
     
 }
 
@@ -92,6 +96,25 @@ fn mix_and_match_with_generics_fix_with_multiple_trait_bounds<T: Accommodation +
     first.book(guest, 1);
     second.book(guest, 1);
 }
+
+fn mix_and_match_with_generics_fix_with_multiple_trait_bounds_with_where<T, U> (first: &mut T, second: &mut U, guest: &str) where  T: Accommodation + Description, U: Accommodation{ // here both the types T are the same meaning they will be only one type
+    first.book(guest, 1);
+    second.book(guest, 1);
+}
+
+
+fn choose_best_place_to_stay() -> impl Accommodation + Description {
+    let luxury = true;
+    // here the type that we return mater too and should be consistent meaning if Hotel is being returned in an if clause we need to make sure to return the Hotel in else class too
+    if luxury {
+        
+        Hotel::new("The Luxe")
+    }else {
+        // AirBnB::new("Peter")   // This will throw an error for sure
+        Hotel::new("The Non Luxe") // added this to satisfy the return value comment this and un comment above to see the error
+    }
+
+}
 fn main() {
 
     let mut booking1 = Hotel::new("Jolly Stayz");
@@ -115,4 +138,16 @@ fn main() {
     // mix_and_match_with_generics(&mut airBnB2, &mut booking2, "meowwww"); // This wil give an error because booking2 and airBnB2 are different types even if they implement the Accommodation trait
     mix_and_match_with_generics_fix(&mut airBnB2, &mut booking2, "meowwww");
     
+
+    // This is important and will give you a good understanding of rust type system
+    let mut hotel3 = choose_best_place_to_stay(); // observe this the type is impl Accommodation + Description and Hotel type
+    // hotel3.summarize(); // This will give an error because the type of hotel3 is not Hotel.
+
+    let h1 = Hotel::new(String::from("kye")); 
+    let h2 = Hotel::new("meowww"); 
+    let h3 = Hotel::new(    vec![1,2,3]); 
+
+    println!("{}",h1.summarize());
+    println!("{}",h2.summarize());
+    // println!("{}",h3.summarize()); // This will throw an error because a vector doesn't impliment Display 
 }
