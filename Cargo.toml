@@ -158,3 +158,6 @@ path="src/traitsContd.rs"
 name="exe11"
 path="src/exercise11.rs"
 
+[[bin]]
+name="lt"
+path="src/lifetime.rs"
