@@ -9,7 +9,7 @@ struct User {
 
 struct Point(i32, i32, i32); // Tuple Structs are use full when one wants to give an entire tuple a name
 
-struct unit_struct; // unit struct is used when one wants to implement a trait on some type but don't want any data.git
+struct unit_struct; // unit struct is used when one wants to implement a trait on some type but don't want any data.
 
 struct rectangle {
     height: u64,

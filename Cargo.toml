@@ -154,3 +154,7 @@ path="src/traits3Constants.rs"
 name="tc2"
 path="src/traitsContd.rs"
 
+[[bin]]
+name="exe11"
+path="src/exercise11.rs"
+
