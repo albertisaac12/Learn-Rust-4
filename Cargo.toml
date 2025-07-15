@@ -161,3 +161,7 @@ path="src/exercise11.rs"
 [[bin]]
 name="lt"
 path="src/lifetime.rs"
+
+[[bin]]
+name="ta"
+path="src/traitAssociatedType.rs"
