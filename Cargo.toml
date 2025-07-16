@@ -165,3 +165,8 @@ path="src/lifetime.rs"
 [[bin]]
 name="ta"
 path="src/traitAssociatedType.rs"
+
+
+[[bin]]
+name="glc"
+path="src/lifetimeGeneric.rs"
