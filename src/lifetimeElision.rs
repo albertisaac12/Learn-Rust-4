@@ -47,7 +47,7 @@ fn main() {
 // the borrow checker will infer that their lifetimes are related.
 
 // Third Rule: If there are multiple input references and one of them is &self or &mut self, 
-// the lifetime of self is assigned to all output references.
+// the lifetime of self is assigned to all returned references.
 
 
 
@@ -119,4 +119,23 @@ struct TravelPlan<'a> {
 
     // Like regular function parameters the Struct instance will be only valid for the overlapping region of the both references
 }
+
+
+
+fn sample(a: i32, b: &String, c: Vec<String>) -> &String {
+    b
+}
+
+
+// fn main() {
+//     let mut fruits = vec!["Apples", "Strawberries", "Pears"];
+//     let fruit_ref_1 = &mut fruits;
+//     let fruit_ref_2 = &mut fruits;
+//     println!("{fruit_ref_1:?}"); // will give error because of NLL rule
+//     println!("{fruit_ref_2:?}");
+// }
+
+// Lecture 337
+
+
 

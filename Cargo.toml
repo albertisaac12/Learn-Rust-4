@@ -173,3 +173,8 @@ path="src/lifetimeGeneric.rs"
 [[bin]]
 name="le"
 path="src/lifetimeElision.rs"
+
+
+[[bin]]
+name="exe12"
+path="src/exercise12.rs"
