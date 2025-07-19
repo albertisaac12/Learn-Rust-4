@@ -166,7 +166,10 @@ path="src/lifetime.rs"
 name="ta"
 path="src/traitAssociatedType.rs"
 
-
 [[bin]]
 name="glc"
 path="src/lifetimeGeneric.rs"
+
+[[bin]]
+name="le"
+path="src/lifetimeElision.rs"
