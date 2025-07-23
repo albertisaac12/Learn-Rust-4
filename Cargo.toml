@@ -178,3 +178,7 @@ path="src/lifetimeElision.rs"
 [[bin]]
 name="exe12"
 path="src/exercise12.rs"
+
+[[bin]]
+name="clo"
+path="src/closures.rs"
