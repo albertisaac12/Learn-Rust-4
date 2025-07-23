@@ -34,10 +34,33 @@ fn main() {
     // owner();  // This will be an error we are trying to move an already moved value
 
     let first_name = String::from("aLICE");
-    let mut capture_string = || first_name; // ,
-    let blah = &mut capture_string;
-    blah();
+    let mut capture_string = || {
+        drop(first_name);
+    };
+    // capture_string();
+    // let blah = &mut capture_string;
+    // blah();
     // let owner = capture_string();
+
+
+    // move keyword
+
+    let name = String::from("meowww");
+    let capture_string = move || {  // move keyword will move everything it sees in the function body
+        println!("{name}") // since the name variable was not consumed either by a different variable or was not moved as a return value we can reuse it again
+    };
+    // println!("{name}"); // will throw an error because name was moved inside
+    capture_string();
+    capture_string();
+    capture_string();
+    capture_string();
+
+    // Practical example of clousers
+
+    None.unwrap_or_else(|| println!("INSIDE UNWRAP_OR_ELSE"));
+
+    let k = Some(4).unwrap_or_else(|| 5 );
+
 
 
 }
