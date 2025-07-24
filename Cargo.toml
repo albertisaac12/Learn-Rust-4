@@ -182,3 +182,7 @@ path="src/exercise12.rs"
 [[bin]]
 name="clo"
 path="src/closures.rs"
+
+[[bin]]
+name="exe13"
+path="src/exercise13.rs"
