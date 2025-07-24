@@ -99,7 +99,17 @@ fn main() {
     map.explore(|location|{
         Location_names.push(location.name.clone());
     });
-    
+
+
+    let closure= || println!("hellooo");
+    execute_thrice(closure); 
+
+    execute_thrice(bake_cake); // An Fn can accept a regular function un-invoked that does not consume of mutate the variable.
+
+    let option: Option<Vec<String>> = None;
+    let collection = option.unwrap_or_else(Vec::new);
+    println!("{:?}", collection);
+
 }
 
 // Functional programming treats a function like any other value in a program => we can use function as a parameter as a variable etc
@@ -179,3 +189,16 @@ fn main() {
             }
         }
     }
+
+
+
+fn execute_thrice<F>(procedure:F) where F: Fn() {
+    procedure();
+    procedure();
+    procedure();
+}
+
+
+fn bake_cake() {
+    println!("Cake Baked");
+}
