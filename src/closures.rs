@@ -1,4 +1,4 @@
-
+use std::io::stdin;
 fn main() {
 
     let multiplier = 5;
@@ -61,8 +61,45 @@ fn main() {
 
     let k = Some(4).unwrap_or_else(|| 5 );
 
+    let vault = Vault {
+        password: String::from("topsecret"),
+        treasure: String::from("Gold")
+    };
+    
+    let clo = || {
+        let mut buff = String::new();
+        println!("Enter Your Password");
+        stdin().read_line(&mut buff).expect("Failed to read");
+        buff = buff.trim().to_string();
+        buff
+    };
+
+    // println!("{}",vault.unlock(clo).unwrap_or("Wrong Password, Vault Destroyed".to_string()));
 
 
+    let mut game_console = String::from("PlayStation");
+    game_console.retain(|character| character != 'a');
+
+
+
+    let locations = [Location {name: String::from("Enchanted Forest"),treasures: 5},Location{name: String::from("Mystic Mountain"),treasures: 10}];
+
+    let map = Map {
+        location: &locations
+    };
+    let mut total_treasures =0;
+    let action = |location: &Location| {
+        total_treasures += location.treasures;
+    };
+    map.explore(action);
+
+    println!("{total_treasures}");
+
+    let mut Location_names = Vec::<String>::new();
+    map.explore(|location|{
+        Location_names.push(location.name.clone());
+    });
+    
 }
 
 // Functional programming treats a function like any other value in a program => we can use function as a parameter as a variable etc
@@ -98,3 +135,47 @@ fn main() {
     // the lifetime of a mutable reference the FnMut takes is active till the last invocation
 
     // with FnOnce the move occurs directly during the declaration and not during the invocation
+
+
+
+
+    // Method that will except a closure as an argument
+    #[derive(Debug)] 
+    struct Vault {
+        password: String,
+        treasure: String
+    }
+
+    impl Vault {
+        fn unlock<F>(self,procedure: F) -> Option<String> where F: FnOnce()-> String {
+            
+            let user_password = procedure();
+            if user_password == self.password {
+                Some(self.treasure)
+            } else{
+                None
+            }
+        }
+    }
+
+
+    struct Location {
+        name: String,
+        treasures: u32
+    }
+
+    struct Map<'a> {
+        location: &'a [Location]
+    }
+
+    impl<'a> Map<'a> {
+        fn explore<F>(&self,mut action: F) where F: FnMut(&Location) {
+            let final_index = self.location.len() -1;
+            let mut current_index = 0 ;
+            while current_index<= final_index {
+                let current_location = &self.location[current_index];
+                action(current_location);
+                current_index+=1;
+            }
+        }
+    }
