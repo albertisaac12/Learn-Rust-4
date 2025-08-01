@@ -125,6 +125,8 @@ Vec::from(a)  // a is an array
     }
 
     // mut here is for the variable and will not be applicabe to the type of data being passed in 
-
-
 ```
+
+Both the to_lowercase and a couple of other utility functions convert even &str into String,
+Need to look into .into()
+.replace(from,to) will also convert a &str to String 
