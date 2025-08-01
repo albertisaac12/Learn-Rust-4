@@ -117,3 +117,14 @@ The rust prelude is a collection of named constructs that are available automati
 ```
 
 Vec::from(a)  // a is an array 
+
+```rust
+
+    fn pp(mut vec : Vec<i32>) {
+        vec.push()
+    }
+
+    // mut here is for the variable and will not be applicabe to the type of data being passed in 
+
+
+```
