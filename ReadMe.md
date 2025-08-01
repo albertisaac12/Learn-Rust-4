@@ -116,6 +116,4 @@ The rust prelude is a collection of named constructs that are available automati
     is_empty()
 ```
 
-319
-311
-314
+Vec::from(a)  // a is an array 
